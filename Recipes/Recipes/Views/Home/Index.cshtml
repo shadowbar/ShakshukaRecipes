@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div style="position: relative;">
+    <canvas id="canvas" width="1000" height="250"></canvas>
+
+    <script>
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var imageObj = new Image();
+
+        imageObj.onload = function() {
+            context.drawImage(imageObj, 0, 0);
+        };
+
+        imageObj.src = '../../tasty.jpg';
+    </script>
+    <div class="title">
+        <h1>
+            Shakshuka recipes
+        </h1>
+        <h4>
+            where you can share your love for Shakshuka with everyone
+        </h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <h2>Getting started</h2>
+        <p>
+            In our website, you can enjoy a variety of shakshuka recipes from all around the world
+            And also share your personal shakshuka recipes with everyone and receive feedback and suggestions.
+            Once logged in, click on "Recipes" on the top menu to begin!
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h2>Our Best Recipes</h2>
+        <video width="100%" height="auto" controls>
+            <source src="~/Content/Tasty.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿<script src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyDbK3-PKcz9w3uDXkR49HxkIYy5I-2tR8k"
+        type="text/javascript"></script>
+@{
+    ViewBag.Title = "Contact Us";
+}
+<center style="max-width:1500px !important">
+    <h6 style="margin: 20px 0">@ViewBag.Title</h6>
+    <div>
+        <address>
+            Our office is at Tzrifin, Rishon Lezion
+        </address>
+        <address>
+            <strong>Owners: </strong> <br />
+            <a href="mailto:yaniv.segal.go@gmail.com">yaniv.segal.go@gmail.com</a><br />
+            <a href="mailto:shadowbar@gmail.com">shadowbar@gmail.com</a><br />
+            <a href="mailto:omerfinger@gmail.com">omerfinger@gmail.com</a><br />
+        </address>
+
+
+        <div id="map" style="width: 500px; height: 400px;"></div>
+    </div>
+</center>
+<script type="text/javascript">
+    function initMap() {
+        var myLatLng = { lat: 31.957328, lng: 34.84056599999997 };
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Hello World!'
+        });
+
+        marker.setMap(map);
+    }
+
+    initMap();
+</script>

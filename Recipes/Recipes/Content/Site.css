@@ -1,4 +1,4 @@
-﻿body {    
+﻿body {
     padding-bottom: 20px;
 }
 
@@ -21,26 +21,60 @@ select,
 textarea {
     max-width: 280px;
 }
+
 @font-face {
     src: url("/fonts/glyphicons-halflings-regular.woff");
 }
 
 .bd-navbar {
     min-height: 4rem;
-    background-color: #563d7c;
+    background-color: #ef2626;
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
 }
 
-.bd-navbar .navbar-nav .nav-link {
-    padding-right: .5rem;
-    padding-left: .5rem;
-    color: #cdbfe3;
-}
+    .bd-navbar .navbar-nav .nav-link {
+        padding-right: .5rem;
+        padding-left: .5rem;
+        color: #fff2f2;
+    }
 
 .link-color {
     color: white;
 }
+
 .footer-bla {
     position: relative;
     bottom: 0;
 }
+
+#canvas {
+    width: 100%;
+}
+
+.title {
+    color: #ef2626;
+    vertical-align: bottom;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+}
+
+.bar {
+    fill: #ef2626;
+    transition: fill 3s;
+}
+
+    .bar:hover {
+        fill: orange;
+    }
+
+.axis {
+    font: 10px sans-serif;
+}
+
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
