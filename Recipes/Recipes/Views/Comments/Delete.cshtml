@@ -16,11 +16,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Recipe.Content)
+            @Html.DisplayNameFor(model => model.Recipe) @Html.DisplayNameFor(model => model.Recipe.Title)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Recipe.Content)
+            @Html.DisplayFor(model => model.Recipe.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Score)
         </dd>
 
         <dt>
@@ -46,7 +54,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Back to List", "Index", "Recipes")
         </div>
     }
 </div>

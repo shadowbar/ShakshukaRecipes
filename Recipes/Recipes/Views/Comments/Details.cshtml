@@ -15,11 +15,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Recipe.Content)
+           @Html.DisplayNameFor(model => model.Recipe) @Html.DisplayNameFor(model => model.Recipe.Title)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Recipe.Content)
+            @Html.DisplayFor(model => model.Recipe.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Score)
         </dd>
 
         <dt>
@@ -42,5 +50,5 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", "Recipes")
 </p>

@@ -1,9 +1,12 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using Recipes.Models;
 using Recipes.Models.Db;
+using Recipes.ViewModels;
 
 namespace Recipes.Controllers
 {
@@ -56,7 +59,7 @@ namespace Recipes.Controllers
                 _db.Comments.Add(comment);
                 _db.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Recipes");
             }
 
             ViewBag.ClientID = new SelectList(_db.Clients, "ID", "ClientName", comment.ClientId);
@@ -89,16 +92,17 @@ namespace Recipes.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,ClientID,RecipeID,Content,CreationDate")] Comment comment)
+        public ActionResult Edit([Bind(Include = "ID,RecipeID,Content,Score")] Comment comment)
         {
             if (!AuthorizationMiddleware.Authorized(Session)) return RedirectToAction("Index", "Home");
 
             if (ModelState.IsValid)
             {
+                comment.CreationDate = DateTime.Now;
                 _db.Entry(comment).State = EntityState.Modified;
                 _db.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Recipes");
             }
 
             ViewBag.ClientID = new SelectList(_db.Clients, "ID", "ClientName", comment.ClientId);
@@ -137,7 +141,7 @@ namespace Recipes.Controllers
             _db.Comments.Remove(comment);
             _db.SaveChanges();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Recipes");
         }
 
         protected override void Dispose(bool disposing)

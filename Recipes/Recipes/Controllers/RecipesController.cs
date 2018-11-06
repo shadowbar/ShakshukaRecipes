@@ -218,7 +218,7 @@ namespace Recipes.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult PostComment(int clientId, int recipeId, string content, float score)
+        public ActionResult PostComment(int clientId, int recipeId, string content, int score)
         {
             if (!AuthorizationMiddleware.Authorized(Session)) return RedirectToAction("Index", "Home");
 

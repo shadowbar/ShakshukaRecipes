@@ -18,6 +18,9 @@ namespace Recipes.Models
         [Required]
         public string Content { get; set; }
 
+        [Required]
+        public int Score { get; set; }
+
         [DataType(DataType.Date)]
         [DisplayName("Created at")]
         public DateTime CreationDate { get; set; }
