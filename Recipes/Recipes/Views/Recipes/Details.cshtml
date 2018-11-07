@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Details";
+    Recipes.Models.Client clnt = (Recipes.Models.Client)Session["Client"];
 }
 
 <div>
@@ -12,7 +13,7 @@
         <dd>
             @Html.DisplayFor(model => model.Title)
         </dd>
-        
+
         <dt>
             @Html.DisplayNameFor(model => model.Client.ClientName)
         </dt>
@@ -30,7 +31,7 @@
         <dt>
             @Html.DisplayNameFor(model => model.Content)
         </dt>
-        <dd>
+        <dd style="white-space: pre-line;">
             @Html.DisplayFor(model => model.Content)
         </dd>
 
@@ -43,9 +44,12 @@
         </dd>
 
     </dl>
-</div>x
+</div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @if (clnt != null && (clnt.IsAdmin || clnt.Id == Model.ClientId))
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+    }
     @Html.ActionLink("Back to List", "Index")
 </p>
 

@@ -78,3 +78,8 @@ textarea {
         stroke: #000;
         shape-rendering: crispEdges;
     }
+
+.recipe-content {
+    min-width: 100%;
+    min-height: 250px;
+}

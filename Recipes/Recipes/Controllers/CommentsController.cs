@@ -92,7 +92,7 @@ namespace Recipes.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,RecipeID,Content,Score")] Comment comment)
+        public ActionResult Edit([Bind(Include = "ID,RecipeID,ClientId,Content,Score")] Comment comment)
         {
             if (!AuthorizationMiddleware.Authorized(Session)) return RedirectToAction("Index", "Home");
 

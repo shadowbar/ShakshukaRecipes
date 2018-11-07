@@ -12,6 +12,9 @@ namespace Recipes.ViewModels
         [DisplayName("Number Of Comments")]
         public int NumberOfComment { get; set; }
 
+        [DisplayName("Avarage Score")]
+        public double? AvarageScore { get; set; }
+
         [DisplayName("Author")]
         public string AuthorFullName { get; set; }
     }

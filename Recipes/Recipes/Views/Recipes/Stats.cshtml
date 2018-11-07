@@ -20,6 +20,9 @@
             @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.AvarageScore)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.NumberOfComment)
         </th>
         <th>
@@ -33,6 +36,9 @@
             <tr>
                 <td>
                     @recipe.Title
+                </td>
+                <td>
+                    @recipe.AvarageScore
                 </td>
                 <td>
                     @recipe.NumberOfComment
@@ -55,7 +61,7 @@
             var usersData = result;
             createPopularRecipesGraph(usersData);
         },
-        error: function(hxr, status, err) {
+        error: function (hxr, status, err) {
             console.log('status: ' + status + ', error: ' + err);
         }
     });

@@ -240,13 +240,14 @@ namespace Recipes.Controllers
         public ActionResult Stats()
         {
             var query =
-                from recipe in _db.Recipes
+                from recipe in _db.Recipes.Include(r => r.Comments).Include(r => r.Client)
                 join client in _db.Clients on recipe.ClientId equals client.Id
                 select new RecipeCommentViewModel
                 {
                     Title = recipe.Title,
                     NumberOfComment = recipe.Comments.Count,
-                    AuthorFullName = client.FirstName + " " + client.LastName
+                    AvarageScore = recipe.Comments.Select(c => c.Score).Average(),
+                    AuthorFullName = recipe.Client.FirstName + " " + recipe.Client.LastName
                 };
 
             return View(query.ToList());
@@ -255,13 +256,13 @@ namespace Recipes.Controllers
         public ActionResult StatsJson()
         {
             var query =
-                from recipe in _db.Recipes
-                join client in _db.Clients on recipe.ClientId equals client.Id
+                from recipe in _db.Recipes.Include(r => r.Comments).Include(r => r.Client)
                 select new RecipeCommentViewModel
                 {
                     Title = recipe.Title,
                     NumberOfComment = recipe.Comments.Count,
-                    AuthorFullName = client.FirstName + " " + client.LastName
+                    AvarageScore = recipe.Comments.Select(c => c.Score).Average(),
+                    AuthorFullName = recipe.Client.FirstName + " " + recipe.Client.LastName
                 };
 
             var data = Json(query.ToList(), JsonRequestBehavior.AllowGet);

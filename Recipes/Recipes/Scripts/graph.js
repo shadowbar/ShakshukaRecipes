@@ -73,12 +73,12 @@ function createPopularRecipesGraph(data) {
     // load the data
     data.forEach(function (d) {
         d.Title = d.Title;
-        d.NumberOfComment = +d.NumberOfComment;
+        d.AvarageScore = +d.AvarageScore;
     });
 
     // scale the range of the data
     x.domain(data.map(function (d) { return d.Title; }));
-    y.domain([0, d3.max(data, function (d) { return d.NumberOfComment; })]);
+    y.domain([0, d3.max(data, function (d) { return d.AvarageScore; })]);
 
     // add axis
     svg.append("g")
@@ -99,7 +99,7 @@ function createPopularRecipesGraph(data) {
         .attr("y", 5)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("NumberOfComment");
+        .text("AvarageScore");
 
     // Add bar chart
     svg.selectAll("bar")
@@ -108,6 +108,6 @@ function createPopularRecipesGraph(data) {
         .attr("class", "bar")
         .attr("x", function (d) { return x(d.Title); })
         .attr("width", x.rangeBand())
-        .attr("y", function (d) { return y(d.NumberOfComment); })
-        .attr("height", function (d) { return height - y(d.NumberOfComment); });
+        .attr("y", function (d) { return y(d.AvarageScore); })
+        .attr("height", function (d) { return height - y(d.AvarageScore); });
 }
