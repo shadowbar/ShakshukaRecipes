@@ -2,8 +2,10 @@
 @model IEnumerable<Recipe>
 
 @{
-    ViewBag.Title = "Recipes";
-    var clnt = (Client)Session["Client"];
+                /**/
+
+                ViewBag.Title = "Recipes";
+                var clnt = (Client)Session["Client"];
 }
 
 @using (Html.BeginForm("Search", "Recipes", FormMethod.Get))
@@ -91,7 +93,7 @@
             </div>
             <div>
                 @Html.ActionLink("Details", "Details", new { id = recipe.Id })
-                @if (clnt != null && clnt.IsAdmin)
+                @if (clnt != null && (clnt.IsAdmin || clnt.Id == recipe.ClientId))
                 {
                     <span> | </span> @Html.ActionLink("Edit", "Edit", new { id = recipe.Id })
                     <span> | </span> @Html.ActionLink("Delete", "Delete", new { id = recipe.Id })

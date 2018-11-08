@@ -90,13 +90,11 @@
                 @Html.DisplayFor(modelItem => recipe.Content)
             </div>
 
-            @if (clnt != null && clnt.IsAdmin)
+            @Html.ActionLink("Details", "Details", new { id = recipe.Id })
+            @if (clnt != null && (clnt.IsAdmin || clnt.Id == recipe.ClientId))
             {
-                <div>
-                    @Html.ActionLink("Edit", "Edit", new { id = recipe.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = recipe.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = recipe.Id })
-                </div>
+                <span> | </span> @Html.ActionLink("Edit", "Edit", new { id = recipe.Id })
+                <span> | </span> @Html.ActionLink("Delete", "Delete", new { id = recipe.Id })
             }
 
         </article>

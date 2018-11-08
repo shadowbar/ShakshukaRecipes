@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Recipes.Models.Ingredient>
+
+@{
+    ViewBag.Title = "Ingredients";
+    var ingredients = Model.ToList();
+}
+
+@using (Html.BeginForm())
+{
+    for (int i = 0; i < ingredients.Count; i++)
+    {
+        @Html.Hidden("ingredient[" + i + "]", ingredients[i].Id)
+        <div class="form-group">
+            @Html.LabelForModel(ingredients[i].Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="number" name="amount[@i]" class="form-control" min="0" value="0" />
+            </div>
+        </div>
+    }
+
+    <input type="submit" value="Post" class="btn btn-default" />
+}
