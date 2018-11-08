@@ -1,18 +1,19 @@
 ﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Web.Mvc;
-using Recipes.Models;
 using Recipes.Models.Db;
-using Recipes.ViewModels;
+using Recipes.Models.ML;
+using Microsoft.ML.Legacy;
 
 namespace Recipes.Controllers
 {
     public class IngredientsController : Controller
     {
         private readonly ModelsMapping _db = new ModelsMapping();
+        static readonly string _modelpath = Path.Combine(Environment.CurrentDirectory, "Data", "Model.zip");
 
         public ActionResult Index()
         {
@@ -27,14 +28,34 @@ namespace Recipes.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(List<int> ingredient, List<int> amount)
+        public async Task<ActionResult> Index(List<int> ingredient, List<int> amount)
         {
-            for (int i = 0; i < ingredient.Count; i++)
+            PredictionModel<ShakVector, ShakPrediction> model = await PredictionModel.ReadAsync<ShakVector, ShakPrediction>(_modelpath);
+
+            ShakVector newVec = new ShakVector
             {
+                TomatoAmount = amount[0],
+                OnionAmount = amount[1],
+                GarlicAmount = amount[2],
+                BellPepperAmount = amount[3],
+                EggsAmount = amount[4],
+                PepperAmount = amount[5],
+                SaltAmount = amount[6],
+                BulgerianCheeseAmount = amount[7],
+                PaprikaAmount = amount[8],
+                WaterAmount = amount[9],
+                TomatoResekAmount = amount[10],
+                CuminAmount = amount[11],
+                EggplantAmount = amount[12],
+                TofuAmount = amount[13],
+                FryingTimeBeforeTomatosMinutes = amount[14],
+                CookingAfterEggsMinutes = amount[15],
+                CookingAfterTomatosMinutes = amount[16]
+            };
 
-            }
+            ShakPrediction prediction = model.Predict(newVec);
 
-            return RedirectToAction("Index");
+            return View("Prediction", prediction.Rating);
         }
     }
 }
