@@ -1,0 +1,10 @@
+C:\Users\flash\git\ShakshukaRecipes\Recipes\ShaksukaModelTrainer\obj\Debug\netcoreapp2.1\ShaksukaModelTrainer.csproj.CoreCompileInputs.cache
+C:\Users\flash\git\ShakshukaRecipes\Recipes\ShaksukaModelTrainer\obj\Debug\netcoreapp2.1\ShaksukaModelTrainer.AssemblyInfoInputs.cache
+C:\Users\flash\git\ShakshukaRecipes\Recipes\ShaksukaModelTrainer\obj\Debug\netcoreapp2.1\ShaksukaModelTrainer.AssemblyInfo.cs
+C:\Users\flash\git\ShakshukaRecipes\Recipes\ShaksukaModelTrainer\bin\Debug\netcoreapp2.1\ShaksukaModelTrainer.deps.json
+C:\Users\flash\git\ShakshukaRecipes\Recipes\ShaksukaModelTrainer\bin\Debug\netcoreapp2.1\ShaksukaModelTrainer.runtimeconfig.json
+C:\Users\flash\git\ShakshukaRecipes\Recipes\ShaksukaModelTrainer\bin\Debug\netcoreapp2.1\ShaksukaModelTrainer.runtimeconfig.dev.json
+C:\Users\flash\git\ShakshukaRecipes\Recipes\ShaksukaModelTrainer\bin\Debug\netcoreapp2.1\ShaksukaModelTrainer.dll
+C:\Users\flash\git\ShakshukaRecipes\Recipes\ShaksukaModelTrainer\bin\Debug\netcoreapp2.1\ShaksukaModelTrainer.pdb
+C:\Users\flash\git\ShakshukaRecipes\Recipes\ShaksukaModelTrainer\obj\Debug\netcoreapp2.1\ShaksukaModelTrainer.dll
+C:\Users\flash\git\ShakshukaRecipes\Recipes\ShaksukaModelTrainer\obj\Debug\netcoreapp2.1\ShaksukaModelTrainer.pdb
