@@ -405,5 +405,8 @@ C:\Users\flash\git\ShakshukaRecipes\Recipes\Recipes\bin\Microsoft.Owin.Security.
 C:\Users\flash\git\ShakshukaRecipes\Recipes\Recipes\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\flash\git\ShakshukaRecipes\Recipes\Recipes\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\flash\git\ShakshukaRecipes\Recipes\Recipes\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\flash\git\ShakshukaRecipes\Recipes\Recipes\obj\Debug\Recipes.csproj.CoreCompileInputs.cache
+C:\Users\flash\git\ShakshukaRecipes\Recipes\Recipes\obj\Debug\Recipes.csproj.CopyComplete
 C:\Users\flash\git\ShakshukaRecipes\Recipes\Recipes\obj\Debug\Recipes.dll
 C:\Users\flash\git\ShakshukaRecipes\Recipes\Recipes\obj\Debug\Recipes.pdb
+C:\Users\flash\git\ShakshukaRecipes\Recipes\Recipes\obj\Debug\Recipes.csprojAssemblyReference.cache

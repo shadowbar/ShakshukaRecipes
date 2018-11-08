@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes", "Recipes\Recipes.csproj", "{B088A516-7091-4DCF-B7EA-A108F0589207}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaksukaModelTrainer", "ShaksukaModelTrainer\ShaksukaModelTrainer.csproj", "{64970C31-4588-4B2C-8EA4-B9E96DBBA9D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{B088A516-7091-4DCF-B7EA-A108F0589207}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B088A516-7091-4DCF-B7EA-A108F0589207}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B088A516-7091-4DCF-B7EA-A108F0589207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64970C31-4588-4B2C-8EA4-B9E96DBBA9D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64970C31-4588-4B2C-8EA4-B9E96DBBA9D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64970C31-4588-4B2C-8EA4-B9E96DBBA9D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64970C31-4588-4B2C-8EA4-B9E96DBBA9D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {054FBD36-4029-410E-8335-5B3A598CF2B7}
 	EndGlobalSection
 EndGlobal

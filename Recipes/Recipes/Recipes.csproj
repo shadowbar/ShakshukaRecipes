@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -200,11 +201,13 @@
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IngredientsController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\Db\ApplicationDbContext.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="ViewModels\RecipeCommentViewModel.cs" />
@@ -219,6 +222,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Recipes.Models.Db.ModelsMapping.mdf" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -230,6 +234,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include=".gitignore" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\graph.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -278,23 +283,21 @@
     <Content Include="Views\Comments\Delete.cshtml" />
     <Content Include="Views\Comments\Details.cshtml" />
     <Content Include="Views\Comments\Edit.cshtml" />
-    <Content Include="Views\Comments\Index.cshtml" />
     <Content Include="Views\Clients\RecipesLogin.cshtml" />
     <Content Include="Views\Clients\FailedLogin.cshtml" />
     <Content Include="Views\Clients\Stats.cshtml" />
     <Content Include="Views\Recipes\Stats.cshtml" />
     <Content Include="Views\Recipes\Search.cshtml" />
     <Content Include="Views\Clients\Search.cshtml" />
+    <Content Include="Views\Recipes\Add.cshtml" />
+    <Content Include="Views\Ingredients\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <PropertyGroup>
